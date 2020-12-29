@@ -1,0 +1,29 @@
+BEGIN TRANSACTION;
+CREATE TABLE "Account" (
+	id INTEGER NOT NULL, 
+	"Name" VARCHAR(255), 
+	"ParentId" VARCHAR(255), 
+	record_type VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "Account" VALUES(1,'Cains & Co Freemeals','',NULL);
+CREATE TABLE "Delivery_Item__c" (
+	id INTEGER NOT NULL, 
+	"Food_Expiration_Date__c" VARCHAR(255), 
+	"Food_Storage__c" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"Delivery__c" VARCHAR(255), 
+	record_type VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "Delivery_Item__c" VALUES(1,'2021-12-30','Non-refrigerated','Lasagne Sheets','1',NULL);
+CREATE TABLE "Delivery__c" (
+	id INTEGER NOT NULL, 
+	"Scheduled_Date__c" VARCHAR(255), 
+	"Status__c" VARCHAR(255), 
+	"Supplier__c" VARCHAR(255), 
+	record_type VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "Delivery__c" VALUES(1,'2020-12-31T01:00:00.000Z','Requested','1',NULL);
+COMMIT;
